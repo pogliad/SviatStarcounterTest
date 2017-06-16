@@ -9,7 +9,7 @@
     {
         public decimal Commission;
 
-        public DateTimeOffset Date;
+        public DateTime Date;
 
         public decimal Price;
 
