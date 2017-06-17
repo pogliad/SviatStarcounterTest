@@ -7,6 +7,6 @@
     {
         public string Name;
 
-        public QueryResultRows<Franchise> Franchises => Db.SQL<Franchise>("SELECT f FROM Franchise f WHERE f.Corporation = ?", this);
+        //public QueryResultRows<Franchise> Franchises => Db.SQL<Franchise>("SELECT f FROM Franchise f WHERE f.Corporation = ?", this);
     }
 }

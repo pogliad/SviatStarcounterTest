@@ -1,11 +1,11 @@
 {
   "Html": "/Sviat/CorporationJson.html",
   "Name": "",
-  "Franchises": [
-    {
-
-    }
-  ],
+  "Franchises": [{}],
   "NewFranchiseName$": "",
-  "NewFranchiseTrigger$": 0
+  "NewFranchiseTrigger$": 0,
+  "SortFranchiseByCountTrigger$": 0,
+  "SortFranchiseByTotalSalesTrigger$": 0,
+  "SortFranchiseByAvgSalesTrigger$": 0,
+  "SortFranchiseByTrendTrigger$": 0,
 }

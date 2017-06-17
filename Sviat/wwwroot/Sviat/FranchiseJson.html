@@ -37,6 +37,7 @@
                     <th>Sales price</th>
                     <th>Commission</th>
                     <th>Address</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -53,6 +54,9 @@
                         </td>
                         <td>
                             <strong>{{item.Address.FullAddress}}</strong>
+                        </td>
+                        <td>
+                            <button value="{{item.RemoveHomeTrigger$::click}}" onmousedown="++this.value">Remove</button>
                         </td>
                     </tr>
                 </template>

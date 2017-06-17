@@ -9,10 +9,10 @@
             <thead>
             <tr>
                 <th>Name</th>
-                <th>Number of homes</th>
-                <th>Total commission</th>
-                <th>Average commission</th>
-                <th>Trend</th>
+                <th><button value="{{model.SortFranchiseByCountTrigger$::click}}" onmousedown="++this.value">Number of homes</button></th>
+                <th><button value="{{model.SortFranchiseByTotalSalesTrigger$::click}}" onmousedown="++this.value">Total commission</button></th>
+                <th><button value="{{model.SortFranchiseByAvgSalesTrigger$::click}}" onmousedown="++this.value">Average commission</button></th>
+                <th><button value="{{model.SortFranchiseByTrendTrigger$::click}}" onmousedown="++this.value">Trend</button></th>
             </tr>
             </thead>
             <tbody>
