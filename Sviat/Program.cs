@@ -16,12 +16,18 @@
                         var anyone = Db.SQL<Corporation>("SELECT c FROM Corporation c").First;
                         if (anyone == null)
                         {
-                            var corp = new Corporation { Name = "Test1"};
-                            var f1 = new Franchise { Name = "F1", Corporation = corp, Address = new Address()};
-                            var f2 = new Franchise { Name = "F2", Corporation = corp, Address = new Address() };
-                            new Home { Vendor = f1, Date = DateTime.Today, Price = 6000000, Commission = 10000, Address = new Address() };
-                            new Home { Vendor = f1, Date = DateTime.Today.AddDays(-2), Price = 4000000, Commission = 20000, Address = new Address() };
-                            new Home { Vendor = f2, Date = DateTime.Today.AddDays(-3), Price = 5000000, Commission = 19000, Address = new Address() };
+                            var corp = new Corporation { Name = "Real Estate Stars"};
+                            var f1 = new Franchise { Name = "Stockholm West", Corporation = corp, Address = new Address {City = "Stockholm" } };
+                            var f2 = new Franchise { Name = "Stockholm East", Corporation = corp, Address = new Address { City = "Stockholm" } };
+                            var f3 = new Franchise { Name = "Stockholm South", Corporation = corp, Address = new Address { City = "Stockholm" } };
+                            var f4 = new Franchise { Name = "Stockholm North", Corporation = corp, Address = new Address { City = "Stockholm" } };
+                            new Home { Vendor = f1, Date = DateTime.Today.AddMonths(3), Price = 5000000, Commission = 75000, Address = new Address { ZipCode = "w1" }};
+                            new Home { Vendor = f1, Date = DateTime.Today.AddMonths(3), Price = 5000000, Commission = 75000, Address = new Address { ZipCode = "w2" } };
+                            new Home { Vendor = f1, Date = DateTime.Today.AddMonths(3), Price = 5000000, Commission = 75000, Address = new Address { ZipCode = "w3" } };
+                            new Home { Vendor = f1, Date = DateTime.Today.AddMonths(3), Price = 3000000, Commission = 65000, Address = new Address { ZipCode = "w4" } };
+                            new Home { Vendor = f1, Date = DateTime.Today.AddMonths(3), Price = 3000000, Commission = 65000, Address = new Address { ZipCode = "w5" } };
+                            new Home { Vendor = f1, Date = DateTime.Today, Price = 3000000, Commission = 60002, Address = new Address { ZipCode = "thisMonth" } };
+                            new Home { Vendor = f3, Date = DateTime.Today, Price = 5000000, Commission = 20000, Address = new Address { ZipCode = "thisMonthAlone" } };
                         }
                     });
 
