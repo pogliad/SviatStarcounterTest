@@ -54,9 +54,37 @@
             {
                     return Db.Scope<FranchisePage>(() =>
                     {
-                        FranchisePage page = new FranchisePage();
+                        var page = new FranchisePage
+                                       {
+                                           Data =
+                                               Db.SQL<Franchise>(
+                                                   "SELECT f FROM Franchise f WHERE f.ObjectID = ?",
+                                                   id).First
+                                       };
 
-                        page.Data = Db.SQL<Franchise>("SELECT f FROM Franchise f WHERE f.ObjectID = ?", id).First;
+
+                        if (Session.Current == null)
+                        {
+                            Session.Current = new Session(SessionOptions.PatchVersioning);
+                        }
+                        page.Session = Session.Current;
+
+                        return page;
+                    });
+            });
+
+            Handle.GET("/Sviat/home/{?}", (string id) =>
+            {
+                    return Db.Scope<HomeEditPage>(() =>
+                    {
+                        var page = new HomeEditPage
+                                       {
+                                           Data =
+                                               Db.SQL<Home>(
+                                                   "SELECT h FROM Home h WHERE h.ObjectID = ?",
+                                                   id).First
+                                       };
+
 
                         if (Session.Current == null)
                         {

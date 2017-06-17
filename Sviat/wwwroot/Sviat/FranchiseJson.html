@@ -3,7 +3,7 @@
 <template>
     <template is="dom-bind">
         <h1>Settings: {{model.Name$}}</h1>
-        Edit franchise settings
+        <strong>Edit franchise settings</strong>
         <fieldset>
             <label>Name:</label>
             <input value="{{model.Name$::input}}">
@@ -12,8 +12,9 @@
         <button value="{{model.SaveTrigger$::click}}" onmousedown="++this.value">Save</button>
 
         <h1>Register new Home for sale</h1>
-        Home info
+        <strong>Home info</strong>
         <starcounter-include partial="{{model.AddressOfNewHome}}"></starcounter-include>
+        <strong>Transaction info</strong>
         <fieldset>
             <label>Date:</label>
             <input value="{{model.TransactionDateOfNewHome$::input}}">
@@ -27,5 +28,35 @@
             <input value="{{model.CommissionForNewHome$::input}}">
         </fieldset>
         <button value="{{model.RegisterHomeTrigger$::click}}" onmousedown="++this.value">Register</button>
+
+        <h2>List of transactions</h2>
+        <table class="table people-table" slot="people/organizations-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Sales price</th>
+                    <th>Commission</th>
+                    <th>Address</th>
+                </tr>
+            </thead>
+            <tbody>
+                <template is="dom-repeat" items="{{model.Homes}}">
+                    <tr>
+                        <td>
+                            <strong><a href="{{item.EditUrl}}">{{item.Date}}</a></strong>
+                        </td>
+                        <td>
+                            <strong>{{item.Price}}</strong>
+                        </td>
+                        <td>
+                            <strong>{{item.Commission}}</strong>
+                        </td>
+                        <td>
+                            <strong>{{item.Address.FullAddress}}</strong>
+                        </td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
     </template>
 </template>

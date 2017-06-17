@@ -82,6 +82,12 @@
     <Compile Include="FranchisesInCorporationPage.json.cs">
       <DependentUpon>FranchisesInCorporationPage.json</DependentUpon>
     </Compile>
+    <Compile Include="HomeEditPage.json.cs">
+      <DependentUpon>HomeEditPage.json</DependentUpon>
+    </Compile>
+    <Compile Include="HomesInFranchisePage.json.cs">
+      <DependentUpon>HomesInFranchisePage.json</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TransactionAddPage.json.cs">
@@ -109,6 +115,12 @@
     <TypedJSON Include="TransactionAddPage.json">
       <Generator>MsBuild:Compile</Generator>
     </TypedJSON>
+    <TypedJSON Include="HomesInFranchisePage.json">
+      <Generator>MsBuild:Compile</Generator>
+    </TypedJSON>
+    <TypedJSON Include="HomeEditPage.json">
+      <Generator>MsBuild:Compile</Generator>
+    </TypedJSON>
     <None Include="wwwroot\Sviat\FranchiseJson.html" />
   </ItemGroup>
   <ItemGroup>
@@ -119,6 +131,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="wwwroot\Sviat\AddressEditPage.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\Sviat\HomeEditPage.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(StarcounterBin)\Starcounter.MsBuild.targets" />

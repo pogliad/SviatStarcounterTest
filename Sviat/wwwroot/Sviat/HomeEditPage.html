@@ -1,0 +1,27 @@
+﻿<link rel="import" href="/sys/polymer/polymer.html">
+
+<template>
+    <template is="dom-bind">
+        <h1>Edit home of sale</h1>
+
+        <starcounter-include partial="{{model.Address}}"></starcounter-include>
+        <fieldset>
+            <label>Date:</label>
+            <input value="{{model.Date$::input}}">
+        </fieldset>
+        <fieldset>
+            <label>Sales price:</label>
+            <input value="{{model.Price$::input}}">
+        </fieldset>
+        <fieldset>
+            <label>Commission:</label>
+            <input value="{{model.Commission$::input}}">
+        </fieldset>
+        <fieldset>
+            <label>Comment:</label>
+            <input value="{{model.Comment$::input}}">
+        </fieldset>
+
+        <button value="{{model.SaveTrigger$::click}}" onmousedown="++this.value">Save</button>
+    </template>
+</template>
