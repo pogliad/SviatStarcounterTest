@@ -2,6 +2,47 @@
 
 <template>
     <template is="dom-bind">
-        <h1>{{model.Name}}'s page</h1>
+        <h1>{{model.Name}} corporation</h1>
+        <h2>Franchise offices:</h2>
+
+        <table class="table people-table" slot="people/organizations-table">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Number of homes</th>
+                <th>Total commission</th>
+                <th>Average commission</th>
+                <th>Trend</th>
+            </tr>
+            </thead>
+            <tbody>
+            <template is="dom-repeat" items="{{model.Franchises}}">
+                <tr>
+                    <td>
+                        <strong><a href="{{item.EditUrl}}">{{item.Name}}</a></strong>
+                    </td>
+                    <td>
+                        <strong>{{item.HomesCount}}</strong>
+                    </td>
+                    <td>
+                        <strong>{{item.TotalCommission}}</strong>
+                    </td>
+                    <td>
+                        <strong>{{item.AvgCommission}}</strong>
+                    </td>
+                    <td>
+                        <strong>0</strong>
+                    </td>
+                </tr>
+            </template>
+            </tbody>
+        </table>
+
+        <h2>New franchise office:</h2>
+        <fieldset>
+            <label>Name:</label>
+            <input value="{{model.NewFranchiseName$::input}}">
+        </fieldset>
+        <button value="{{model.NewFranchiseTrigger$::click}}" onmousedown="++this.value">Create new</button>
     </template>
 </template>

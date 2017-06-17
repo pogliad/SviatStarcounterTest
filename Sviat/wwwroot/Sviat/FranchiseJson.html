@@ -1,0 +1,13 @@
+﻿<link rel="import" href="/sys/polymer/polymer.html">
+
+<template>
+    <template is="dom-bind">
+        <h1>Settings: {{model.Name$}}</h1>
+        Edit franchise settings
+        <fieldset>
+            <label>Name:</label>
+            <input value="{{model.Name$::input}}">
+        </fieldset>
+        <button value="{{model.SaveTrigger$::click}}" onmousedown="++this.value">Save</button>
+    </template>
+</template>

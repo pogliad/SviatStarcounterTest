@@ -62,6 +62,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CorporationListJson.json.cs">
+      <DependentUpon>CorporationListJson.json</DependentUpon>
+    </Compile>
     <Compile Include="CorporationJson.json.cs">
       <DependentUpon>CorporationJson.json</DependentUpon>
     </Compile>
@@ -70,6 +73,12 @@
     <Compile Include="Database\Goods.cs" />
     <Compile Include="Database\Franchise.cs" />
     <Compile Include="Database\Corporation.cs" />
+    <Compile Include="FranchisePage.json.cs">
+      <DependentUpon>FranchisePage.json</DependentUpon>
+    </Compile>
+    <Compile Include="FranchisesInCorporationPage.json.cs">
+      <DependentUpon>FranchisesInCorporationPage.json</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -78,9 +87,23 @@
       <Generator>MsBuild:Compile</Generator>
     </TypedJSON>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <TypedJSON Include="CorporationListJson.json">
+      <Generator>MsBuild:Compile</Generator>
+    </TypedJSON>
+    <TypedJSON Include="FranchisePage.json">
+      <Generator>MsBuild:Compile</Generator>
+    </TypedJSON>
+    <TypedJSON Include="FranchisesInCorporationPage.json">
+      <Generator>MsBuild:Compile</Generator>
+    </TypedJSON>
+    <None Include="wwwroot\Sviat\FranchiseJson.html" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="wwwroot\Sviat\CorporationJson.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\Sviat\CorporationListJson.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(StarcounterBin)\Starcounter.MsBuild.targets" />
