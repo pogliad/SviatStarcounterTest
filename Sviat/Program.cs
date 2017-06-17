@@ -17,11 +17,11 @@
                         if (anyone == null)
                         {
                             var corp = new Corporation { Name = "Test1"};
-                            var f1 = new Franchise { Name = "F1", Corporation = corp };
-                            var f2 = new Franchise { Name = "F2", Corporation = corp };
-                            new Home { Vendor = f1, Date = DateTime.Today, Price = 6000000, Commission = 10000 };
-                            new Home { Vendor = f1, Date = DateTime.Today.AddDays(-2), Price = 4000000, Commission = 20000 };
-                            new Home { Vendor = f2, Date = DateTime.Today.AddDays(-3), Price = 5000000, Commission = 19000 };
+                            var f1 = new Franchise { Name = "F1", Corporation = corp, Address = new Address()};
+                            var f2 = new Franchise { Name = "F2", Corporation = corp, Address = new Address() };
+                            new Home { Vendor = f1, Date = DateTime.Today, Price = 6000000, Commission = 10000, Address = new Address() };
+                            new Home { Vendor = f1, Date = DateTime.Today.AddDays(-2), Price = 4000000, Commission = 20000, Address = new Address() };
+                            new Home { Vendor = f2, Date = DateTime.Today.AddDays(-3), Price = 5000000, Commission = 19000, Address = new Address() };
                         }
                     });
 

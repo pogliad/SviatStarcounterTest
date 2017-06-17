@@ -16,8 +16,10 @@ namespace Sviat
             var newFr = new Franchise
             {
                 Corporation = this.Data as Corporation,
-                Name = this.NewFranchiseName
+                Name = this.NewFranchiseName,
+                Address = new Address()
             };
+
             Transaction.Commit();
         }
     }

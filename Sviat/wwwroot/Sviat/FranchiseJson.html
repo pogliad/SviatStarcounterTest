@@ -8,6 +8,24 @@
             <label>Name:</label>
             <input value="{{model.Name$::input}}">
         </fieldset>
+        <starcounter-include partial="{{model.Address}}"></starcounter-include>
         <button value="{{model.SaveTrigger$::click}}" onmousedown="++this.value">Save</button>
+
+        <h1>Register new Home for sale</h1>
+        Home info
+        <starcounter-include partial="{{model.AddressOfNewHome}}"></starcounter-include>
+        <fieldset>
+            <label>Date:</label>
+            <input value="{{model.TransactionDateOfNewHome$::input}}">
+        </fieldset>
+        <fieldset>
+            <label>Price:</label>
+            <input value="{{model.PriceOfNewHome$::input}}">
+        </fieldset>
+        <fieldset>
+            <label>Commission:</label>
+            <input value="{{model.CommissionForNewHome$::input}}">
+        </fieldset>
+        <button value="{{model.RegisterHomeTrigger$::click}}" onmousedown="++this.value">Register</button>
     </template>
 </template>

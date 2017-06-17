@@ -1,5 +1,7 @@
 ﻿namespace Sviat.Database
 {
+    using System.Text;
+
     using Starcounter;
 
     [Database]

@@ -1,5 +1,12 @@
 {
   "Html": "/Sviat/FranchiseJson.html",
   "Name$": "",
-  "SaveTrigger$": 0
+  "Address": {},
+  "Homes": [ {} ],
+  "SaveTrigger$": 0,
+  "AddressOfNewHome": {},
+  "TransactionDateOfNewHome$": "",
+  "PriceOfNewHome$": 0,
+  "CommissionForNewHome$": 0,
+  "RegisterHomeTrigger$": 0
 }
