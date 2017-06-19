@@ -15,11 +15,11 @@ namespace Sviat
         {
             get
             {
-                return Db.SQL<Franchise>($"SELECT f FROM Franchise f WHERE f.Corporation = ?{_sortCommand}", this.Data as Corporation);
+                return Db.SQL<Franchise>($"SELECT f FROM Franchise f WHERE f.Corporation = ?{this.sortCommand}", this.Data as Corporation);
             }
         }
 
-        private string _sortCommand = string.Empty;
+        private string sortCommand = string.Empty;
 
         void Handle(Input.NewFranchiseTrigger action)
         {
@@ -35,22 +35,22 @@ namespace Sviat
 
         void Handle(Input.SortFranchiseByCountTrigger action)
         {
-            _sortCommand = " ORDER BY f.HomesCount DESC";
+            this.sortCommand = " ORDER BY f.HomesCount DESC";
         }
 
         void Handle(Input.SortFranchiseByTotalSalesTrigger action)
         {
-            _sortCommand = " ORDER BY f.TotalCommission DESC";
+            this.sortCommand = " ORDER BY f.TotalCommission DESC";
         }
 
         void Handle(Input.SortFranchiseByAvgSalesTrigger action)
         {
-            _sortCommand = " ORDER BY f.AvgCommission DESC";
+            this.sortCommand = " ORDER BY f.AvgCommission DESC";
         }
 
         void Handle(Input.SortFranchiseByTrendTrigger action)
         {
-            _sortCommand = " ORDER BY f.Name DESC";
+            this.sortCommand = string.Empty;
         }
     }
 }

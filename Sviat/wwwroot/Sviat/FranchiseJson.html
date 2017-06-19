@@ -2,6 +2,7 @@
 
 <template>
     <template is="dom-bind">
+        <a href="/Sviat">< < Back to start</a>
         <h1>Settings: {{model.Name$}}</h1>
         <strong>Edit franchise settings</strong>
         <fieldset>
@@ -32,34 +33,34 @@
         <h2>List of transactions</h2>
         <table class="table people-table" slot="people/organizations-table">
             <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Sales price</th>
-                    <th>Commission</th>
-                    <th>Address</th>
-                    <th></th>
-                </tr>
+            <tr>
+                <th>Date</th>
+                <th>Sales price</th>
+                <th>Commission</th>
+                <th>Address</th>
+                <th></th>
+            </tr>
             </thead>
             <tbody>
-                <template is="dom-repeat" items="{{model.Homes}}">
-                    <tr>
-                        <td>
-                            <strong><a href="{{item.EditUrl}}">{{item.Date}}</a></strong>
-                        </td>
-                        <td>
-                            <strong>{{item.Price}}</strong>
-                        </td>
-                        <td>
-                            <strong>{{item.Commission}}</strong>
-                        </td>
-                        <td>
-                            <strong>{{item.Address.FullAddress}}</strong>
-                        </td>
-                        <td>
-                            <button value="{{item.RemoveHomeTrigger$::click}}" onmousedown="++this.value">Remove</button>
-                        </td>
-                    </tr>
-                </template>
+            <template is="dom-repeat" items="{{model.Homes}}">
+                <tr>
+                    <td>
+                        <strong><a href="{{item.EditUrl}}">{{item.Date}}</a></strong>
+                    </td>
+                    <td>
+                        <strong>{{item.Price}}</strong>
+                    </td>
+                    <td>
+                        <strong>{{item.Commission}}</strong>
+                    </td>
+                    <td>
+                        <strong>{{item.Address.FullAddress}}</strong>
+                    </td>
+                    <td>
+                        <button value="{{item.RemoveHomeTrigger$::click}}" onmousedown="++this.value">Remove</button>
+                    </td>
+                </tr>
+            </template>
             </tbody>
         </table>
     </template>
